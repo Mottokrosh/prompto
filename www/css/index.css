@@ -78,6 +78,7 @@ h2 {
 
 .task-wrapper {
 	flex: 1;
+    margin: 4px;
 }
 
 .task .show-selected {
@@ -103,11 +104,12 @@ h2 {
 	background-color: #ED4771;
 	padding: 20px;
     box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
-    margin: 4px;
+    margin: 0;
     font-size: 1rem;
     font-weight: normal;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .task.completed {
