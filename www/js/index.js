@@ -14,6 +14,9 @@ app.config(function ($routeProvider) {
 app.controller('MainCtrl', function ($scope, $resource) {
 	var Tasks = $resource('https://prompto.smileupps.com/tasks');
 		$scope.tasks = Tasks.get();
+		$scope.taskClick = function (){
+			console.log("clciked.");
+		}
 });
 
 

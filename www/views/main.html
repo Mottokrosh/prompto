@@ -4,3 +4,14 @@
 		{{task.name}}
 	</li>
 </ul>
+
+
+			
+<div class="timeline">
+	<div class="task selected" ng-click="taskClick()" ng-repeat="task in tasks">
+		<h2>{{task.name}}</h2>
+		<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/pill.png" width="100">
+		
+		<button type="button" class="btn btn-success">I have taken my medication</button>
+	</div>
+</div>

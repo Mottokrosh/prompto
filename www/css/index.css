@@ -7,7 +7,7 @@
 	border: 1px solid #CCC;
 	background: #EEE;
 	flex: 1;
-	padding: ;
+	padding: 10px;
 }
 
 .task h2{
@@ -15,7 +15,7 @@
 }
 
 .task img{
-	display: block;
+	display: none;
 	max-width: 100px;
 	max-width: 80%;
 	margin: 50px auto;
@@ -23,5 +23,9 @@
 
 .task button{
 	width: 100%;
-	margin: 10px 0;
 }
+
+.task.selected img{
+	display: block;
+}
+
