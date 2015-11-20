@@ -11,11 +11,14 @@ app.config(function ($routeProvider) {
 		});
 });
 
+app.controller('HeaderCtrl', function ($scope) {
+	$scope.message = 'Hello';
+});
+
 app.controller('MainCtrl', function ($scope, $resource) {
 	var Tasks = $resource('https://prompto.smileupps.com/tasks');
 		$scope.tasks = Tasks.get();
 });
-
 
 var app = {
 	initialize: function() {

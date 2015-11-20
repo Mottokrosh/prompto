@@ -1,3 +1,30 @@
+body {
+    background-image: url(../img/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+#primary-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+#primary-logo img {
+    max-width: 240px;
+}
+
+.col-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header[role="banner"] {
+    min-height: 120px;
+}
+
 .timeline{
 	display: flex;
 	align-items: flex-end;
