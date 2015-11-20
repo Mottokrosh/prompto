@@ -1,0 +1,27 @@
+.timeline{
+	display: flex;
+	align-items: flex-end;
+}
+
+.task{
+	border: 1px solid #CCC;
+	background: #EEE;
+	flex: 1;
+	padding: ;
+}
+
+.task h2{
+	text-align: center;
+}
+
+.task img{
+	display: block;
+	max-width: 100px;
+	max-width: 80%;
+	margin: 50px auto;
+}
+
+.task button{
+	width: 100%;
+	margin: 10px 0;
+}

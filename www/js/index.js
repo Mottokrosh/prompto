@@ -12,10 +12,8 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('MainCtrl', function ($scope, $resource) {
-	$scope.test = {
-		foo: 'bar',
-		bla: 'thing'
-	};
+	var Tasks = $resource('https://prompto.smileupps.com/tasks');
+		$scope.tasks = Tasks.get();
 });
 
 

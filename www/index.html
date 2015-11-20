@@ -3,10 +3,39 @@
 	<head>
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<title>Hello World</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<title>prompto</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<div id="app" ng-view></div>
+		<div class="container-fluid">
+			<header class="page-header">
+				<h1 class="text-center">Good Morning Harriet</h1>
+			</header>
+			
+			<div class="timeline">
+				<div class="task selected">
+					<h2>Take Medication</h2>
+					<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/pill.png" width="100">
+					
+					<button type="button" class="btn btn-success">I have taken my medication</button>
+				</div>
+				
+				<div class="task">.col-md-1</div>
+				<div class="task">.col-md-1</div>
+				<div class="task">.col-md-1</div>
+				<div class="task">.col-md-1</div>
+				<div class="task">.col-md-1</div>
+			</div>
+			
+		</div>
+	
+		<!--div id="app" ng-view></div-->
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/angular.js"></script>
 		<script type="text/javascript" src="js/angular-resource.js"></script>

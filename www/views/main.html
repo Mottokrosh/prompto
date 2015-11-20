@@ -1,3 +1,6 @@
-<h1>Hello, World.</h1>
-<pre>{{test|json}}</pre>
-<input ng-model="test.foo">
+<h1>Tasks.</h1>
+<ul>
+	<li ng-repeat="task in tasks">
+		{{task.name}}
+	</li>
+</ul>
