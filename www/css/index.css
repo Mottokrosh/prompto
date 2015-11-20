@@ -76,10 +76,31 @@ h2 {
 	align-items: flex-end;
 }
 
+.task-wrapper {
+	flex: 1;
+}
+
+.task .show-selected {
+	overflow: hidden;
+	height: 0;
+    transition: height 100ms ease;
+}
+
+.task.selected .show-selected {
+	height: 185px;
+    padding-top: 1rem;
+}
+
+.task-wrapper .time {
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+	font-size: 14pt;
+	margin-bottom: 2px;
+}
+
 .task {
 	border: none;
 	background-color: #ED4771;
-	flex: 1;
 	padding: 20px;
     box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
     margin: 4px;
@@ -103,7 +124,7 @@ h2 {
 .task h2 {
 	text-align: center;
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 .task img.main-icon {
