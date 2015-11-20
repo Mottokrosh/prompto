@@ -36,10 +36,11 @@ app.controller('HeaderCtrl', function ($scope) {
 	$scope.message = greeting;
 });
 
-app.controller('MainCtrl', function ($scope, $resource, $interval) {
-	/*var Tasks = $resource('https://prompto.smileupps.com/tasks');
-	$scope.tasks = Tasks.get();*/
-	var result;
+app.controller('MainCtrl', function ($scope, $http, $interval) {
+	$http.get('https://prompto.smileupps.com/tasks/_design/tasks/_view/all')
+		.success(function (response) {
+			$scope.tasks = response.rows;
+		});
 
 	$interval(function () {
 		var found = false;
@@ -51,15 +52,6 @@ app.controller('MainCtrl', function ($scope, $resource, $interval) {
 			}
 		});
 	}, 1000);
-
-	$scope.tasks = [
-		{'name':'Take Medication','category':'Medication', time: '08:00', completed: true },
-		{'name':'Brush Teeth','category':'Hygene', time: '08:15', completed: true},
-		{'name':'Take Medication','category':'Medication', time: '15:00', completed: false},
-		{'name':'Eat Dinner','category':'Food', time: '19:00', completed: false},
-		{'name':'Take Medication','category':'Medication', time: '21:00', completed: false},
-		{'name':'Charge iPad','category':'Devices', time: '22:00', completed: false}
-	];
 
 	$scope.taskClick = function ($event, task){
 		if(task.next || task.completed){
