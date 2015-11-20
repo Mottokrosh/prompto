@@ -18,10 +18,11 @@ app.controller('HeaderCtrl', function ($scope) {
 
 app.controller('MainCtrl', function ($scope, $resource) {
 	var Tasks = $resource('https://prompto.smileupps.com/tasks');
-		$scope.tasks = Tasks.get();
-		$scope.taskClick = function (){
-			console.log("clciked.");
-		}
+	//$scope.tasks = Tasks.get();
+	$scope.tasks = [{'name':'Take Medication','category':'Medication'},{'name':'Brush Teeth','category':'Hygene'},{'name':'Eat Dinner','category':'Food'}];
+	$scope.taskClick = function (){
+		console.log("clciked.");
+	}
 });
 
 var app = {

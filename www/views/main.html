@@ -1,13 +1,4 @@
-<h1>Tasks.</h1>
-<ul>
-	<li ng-repeat="task in tasks">
-		{{task.name}}
-	</li>
-</ul>
-
-
-			
-<div class="timeline">
+<div class="timeline col-wrapper">
 	<div class="task selected" ng-click="taskClick()" ng-repeat="task in tasks">
 		<h2>{{task.name}}</h2>
 		<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/pill.png" width="100">
