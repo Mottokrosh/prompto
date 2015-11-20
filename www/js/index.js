@@ -45,6 +45,7 @@ app.controller('MainCtrl', function ($scope, $resource, $interval) {
 		var found = false
 		angular.forEach($scope.tasks, function(task){
 			if(!found && task.completed == false){
+				task.next = true;
 				task.selected = true;
 				found = true;
 			}
@@ -60,8 +61,12 @@ app.controller('MainCtrl', function ($scope, $resource, $interval) {
 		{'name':'Charge iPad','category':'Devices', time: '22:00', completed: false}
 	];
 
-	$scope.taskClick = function (task){
-		task.selected = !task.selected;
+	$scope.taskClick = function ($event, task){
+		if(task.next || task.completed){
+			$event.preventDefault();
+		}else{
+			task.selected = !task.selected;
+		}
 	};
 });
 
