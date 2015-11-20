@@ -70,6 +70,16 @@ h2 {
 	flex: 1;
 }
 
+.task .show-selected {
+	overflow: hidden;
+	height: 0;
+    transition: height 100ms ease;
+}
+
+.task.selected .show-selected {
+	height: 150px;
+}
+
 .task-wrapper .time {
 	text-align: center;
 	font-family: 'Poiret One', cursive;
@@ -98,15 +108,14 @@ h2 {
 
 .task h2{
 	text-align: center;
+	margin: 0;
 }
 
 .task img{
 	display: block;
 	max-width: 100px;
 	max-width: 80%;
-	margin: 50px auto;
-	height: 0;
-    transition: height 200ms ease;
+	margin: 0 auto;
 }
 
 .task button{
@@ -114,6 +123,5 @@ h2 {
 }
 
 .task.selected img{
-	height: 100px;
 }
 

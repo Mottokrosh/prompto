@@ -3,9 +3,12 @@
 		<div class="time">{{task.time}}</div>
 		<button ng-click="taskClick(task)" ng-class="{ task: true, completed: task.completed, selected: task.selected }">
 			<h2>{{task.name}}</h2>
-			<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/pill.png">
+			
+			<div class="show-selected">
+				<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/pill.png">
 
-			<div class="pill">I have taken my medication</div>
+				<div class="pill">I have taken my medication</div>
+			</div>
 		</button>
 	</div>
 </div>
