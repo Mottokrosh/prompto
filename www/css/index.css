@@ -136,8 +136,8 @@ footer time {
 
 .task {
 	border: none;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 	background-color: #C2AB02;
 	padding: 20px;
     box-shadow: 4px -4px 0 rgba(194, 171, 2, 0.5);
