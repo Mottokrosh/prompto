@@ -29,8 +29,8 @@ app.controller('MainCtrl', function ($scope, $resource) {
 		{'name':'Charge iPad','category':'Devices', time: '22:00'}
 	];
 
-	$scope.taskClick = function (){
-		console.log("clciked.");
+	$scope.taskClick = function (task){
+		task.selected = !task.selected;
 	};
 });
 
