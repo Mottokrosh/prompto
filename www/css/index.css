@@ -82,7 +82,22 @@ header[role="banner"] .greeting:before {
     margin: 20px 0 0 0;
 }
 
-.timeline{
+footer {
+    background-color: #323a3c;
+}
+
+footer > div {
+    padding: 20px;
+    text-align: center;
+}
+
+footer time {
+    text-align: center;
+    color: #4DBDB7;
+    font-size: 2rem;
+}
+
+.timeline {
 	display: flex;
 	align-items: flex-end;
 }
