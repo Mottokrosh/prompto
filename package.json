@@ -1,0 +1,23 @@
+{
+  "name": "prompto",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.6.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mottokrosh/prompto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mottokrosh/prompto/issues"
+  },
+  "homepage": "https://github.com/Mottokrosh/prompto#readme"
+}
