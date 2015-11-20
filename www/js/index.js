@@ -12,7 +12,8 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('HeaderCtrl', function ($scope) {
-	$scope.message = 'Hello';
+	var timeOfDay = 'Good morning, ';
+	$scope.message = timeOfDay + 'Harriet';
 });
 
 app.controller('MainCtrl', function ($scope, $resource) {

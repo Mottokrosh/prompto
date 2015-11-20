@@ -3,16 +3,24 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+    font-family: 'Muli', sans-serif;
 }
 
 #primary-logo {
     position: fixed;
     top: 20px;
-    left: 20px;
+    left: 40px;
 }
 
 #primary-logo img {
-    max-width: 240px;
+    max-width: 180px;
+    opacity: 0.75;
+    -webkit-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+}
+
+#primary-logo img:hover {
+    opacity: 1;
 }
 
 .col-wrapper {
@@ -23,6 +31,21 @@ body {
 
 header[role="banner"] {
     min-height: 120px;
+    padding: 30px;
+}
+
+h1, h2, h3, h4 {
+    color: #E8D22C;
+    margin: 0 0 1em 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.75em;
 }
 
 .timeline{
