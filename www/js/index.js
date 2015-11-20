@@ -11,6 +11,11 @@ app.config(function ($routeProvider) {
 		});
 });
 
+app.controller('HeaderCtrl', function ($scope) {
+	var timeOfDay = 'Good morning, ';
+	$scope.message = timeOfDay + 'Harriet';
+});
+
 app.controller('MainCtrl', function ($scope, $resource) {
 	var Tasks = $resource('https://prompto.smileupps.com/tasks');
 		$scope.tasks = Tasks.get();
@@ -18,7 +23,6 @@ app.controller('MainCtrl', function ($scope, $resource) {
 			console.log("clciked.");
 		}
 });
-
 
 var app = {
 	initialize: function() {
