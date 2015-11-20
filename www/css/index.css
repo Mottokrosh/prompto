@@ -121,8 +121,8 @@ footer time {
 .task-wrapper .time {
 	text-align: center;
 	font-family: 'Poiret One', cursive;
-	font-size: 14pt;
-	margin-bottom: 2px;
+	font-size: 24pt;
+	margin-bottom: 1rem;
 }
 
 .task {
@@ -155,6 +155,7 @@ footer time {
 	text-align: center;
     color: #fff;
     margin-bottom: 0;
+    width: 100%;
 }
 
 .task img.main-icon {

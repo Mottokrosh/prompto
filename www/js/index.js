@@ -44,10 +44,10 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 
 	$interval(function () {
 		var found = false;
-		angular.forEach($scope.tasks, function (task){
-			if (!found && task.completed === false) {
-				task.next = true;
-				task.selected = true;
+		angular.forEach($scope.tasks, function (task) {
+			if (!found && task.value.completed === false) {
+				task.value.next = true;
+				task.value.selected = true;
 				found = true;
 			}
 		});
