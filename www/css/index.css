@@ -113,6 +113,11 @@ footer time {
     transition: height 100ms ease;
 }
 
+.task.selected {
+    background-color: #ED4771;
+    box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
+}
+
 .task.selected .show-selected {
 	height: 185px;
     padding-top: 1rem;
@@ -133,9 +138,9 @@ footer time {
 	border: none;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-	background-color: #ED4771;
+	background-color: #C2AB02;
 	padding: 20px;
-    box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
+    box-shadow: 4px -4px 0 rgba(194, 171, 2, 0.5);
     margin: 0;
     font-size: 1rem;
     font-weight: normal;
