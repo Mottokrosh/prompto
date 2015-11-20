@@ -59,11 +59,24 @@ h2 {
 	align-items: flex-end;
 }
 
-.task{
-	border: 1px solid #CCC;
-	background: #EEE;
+.task {
+	border: none;
+	background-color: #ED4771;
 	flex: 1;
 	padding: 10px;
+    box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
+    margin: 4px;
+}
+
+.task.completed {
+    background-color: #4DBDB7;
+    color: #2B6965;
+    opacity: 0.25;
+    box-shadow: 4px -4px 0 rgba(65, 158, 153, 0.5);
+}
+
+.task.completed h2 {
+    color: #2B6965;
 }
 
 .task h2{

@@ -19,10 +19,19 @@ app.controller('HeaderCtrl', function ($scope) {
 app.controller('MainCtrl', function ($scope, $resource) {
 	var Tasks = $resource('https://prompto.smileupps.com/tasks');
 	//$scope.tasks = Tasks.get();
-	$scope.tasks = [{'name':'Take Medication','category':'Medication'},{'name':'Brush Teeth','category':'Hygene'},{'name':'Eat Dinner','category':'Food'}];
+
+	$scope.tasks = [
+		{'name':'Take Medication','category':'Medication', time: '08:00', completed: true },
+		{'name':'Brush Teeth','category':'Hygene', time: '08:15', completed: true},
+		{'name':'Take Medication','category':'Medication', time: '15:00'},
+		{'name':'Eat Dinner','category':'Food', time: '19:00'},
+		{'name':'Take Medication','category':'Medication', time: '21:00'},
+		{'name':'Charge iPad','category':'Devices', time: '22:00'}
+	];
+
 	$scope.taskClick = function (){
 		console.log("clciked.");
-	}
+	};
 });
 
 var app = {

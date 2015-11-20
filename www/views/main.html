@@ -1,8 +1,8 @@
 <div class="timeline col-wrapper">
-	<div class="task selected" ng-click="taskClick()" ng-repeat="task in tasks">
+	<button ng-click="taskClick()" ng-repeat="task in tasks" ng-class="{ task: true, completed: task.completed }">
 		<h2>{{task.name}}</h2>
 		<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/pill.png" width="100">
-		
-		<button type="button" class="btn btn-success">I have taken my medication</button>
-	</div>
+
+		<div class="pill">I have taken my medication</div>
+	</button>
 </div>
