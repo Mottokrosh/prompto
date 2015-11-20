@@ -1,0 +1,14 @@
+2015-11-20 08:37:50.590 Prompto[15530:4566649] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/mottokrosh/Library/Developer/CoreSimulator/Devices/FE9D8CBA-EB48-4ADB-B8E5-B5DD392EB1F5/data/Containers/Data/Application/DB3A74C8-5761-4A68-BA90-BBFD38FFE15C/Library/Cookies/com.dementiaid.prompto.binarycookies
+2015-11-20 08:37:51.123 Prompto[15530:4566649] Apache Cordova native platform version 3.8.0 is starting.
+2015-11-20 08:37:51.124 Prompto[15530:4566649] Multi-tasking -> Device: YES, App: YES
+2015-11-20 08:37:51.145 Prompto[15530:4566649] Unlimited access to network resources
+2015-11-20 08:37:51.161 Prompto[15530:4566649] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-11-20 08:37:52.348 Prompto[15530:4566649] Resetting plugins due to page load.
+2015-11-20 08:37:52.657 Prompto[15530:4566649] Finished load of: file:///Users/mottokrosh/Library/Developer/CoreSimulator/Devices/FE9D8CBA-EB48-4ADB-B8E5-B5DD392EB1F5/data/Containers/Bundle/Application/71507F34-98FA-495D-970A-2B1622B8CCA9/Prompto.app/www/index.html
