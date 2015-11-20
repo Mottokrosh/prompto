@@ -66,10 +66,20 @@ h2 {
 	align-items: flex-end;
 }
 
+.task-wrapper {
+	flex: 1;
+}
+
+.task-wrapper .time {
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+	font-size: 14pt;
+	margin-bottom: 2px;
+}
+
 .task {
 	border: none;
 	background-color: #ED4771;
-	flex: 1;
 	padding: 10px;
     box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
     margin: 4px;
