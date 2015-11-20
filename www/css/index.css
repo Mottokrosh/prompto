@@ -1,5 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
 html {
     background-color: #323a3c;
+    font-size: 18px;
 }
 
 body {
@@ -15,7 +24,7 @@ body {
 	flex-direction: column;
 }
 
-#app{
+#app {
 	margin-top: auto;
 }
 
@@ -58,7 +67,8 @@ h1 {
 }
 
 h2 {
-    font-size: 1.75em;
+    font-size: 1.25em;
+    font-weight: normal;
 }
 
 .timeline{
@@ -70,9 +80,13 @@ h2 {
 	border: none;
 	background-color: #ED4771;
 	flex: 1;
-	padding: 10px;
+	padding: 20px;
     box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
     margin: 4px;
+    font-size: 1rem;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
 }
 
 .task.completed {
@@ -86,24 +100,33 @@ h2 {
     color: #2B6965;
 }
 
-.task h2{
+.task h2 {
 	text-align: center;
+    color: #fff;
+    margin-bottom: 1rem;
 }
 
-.task img{
-	display: block;
-	max-width: 100px;
-	max-width: 80%;
-	margin: 50px auto;
+.task img.main-icon {
 	height: 0;
     transition: height 200ms ease;
 }
 
-.task button{
+.task.selected img.main-icon {
+    height: 100px;
+}
+
+.task button {
 	width: 100%;
 }
 
-.task.selected img{
-	height: 100px;
+.task .pill {
+    padding: 10px 40px 10px 20px;
+    background-color: #fff;
+    color: #ED4771;
+    border-radius: 20px;
+    margin: 1rem auto 0 auto;
+    background-image: url(../img/icon_tick_reversed.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right 15px center;
 }
-
