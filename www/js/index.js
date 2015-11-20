@@ -40,16 +40,16 @@ app.controller('MainCtrl', function ($scope, $resource, $interval) {
 	/*var Tasks = $resource('https://prompto.smileupps.com/tasks');
 	$scope.tasks = Tasks.get();*/
 	var result;
-	
-	$interval(function(){
-		var found = false
-		angular.forEach($scope.tasks, function(task){
-			if(!found && task.completed == false){
+
+	$interval(function () {
+		var found = false;
+		angular.forEach($scope.tasks, function (task){
+			if (!found && task.completed === false) {
 				task.next = true;
 				task.selected = true;
 				found = true;
 			}
-		})
+		});
 	}, 1000);
 
 	$scope.tasks = [
