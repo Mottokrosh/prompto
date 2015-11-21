@@ -100,10 +100,14 @@ footer time {
 .timeline {
 	display: flex;
 	align-items: flex-end;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .task-wrapper {
 	flex: 1;
+    flex-basis: 150px;
+	min-width: 150px;
     margin: 4px 4px 0 4px;
 }
 
@@ -113,14 +117,30 @@ footer time {
     transition: height 100ms ease;
 }
 
+.task-wrapper button {
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	border-spacing: 0;
+	color: #26589F;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.42rem;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+}
+
 .task.selected {
     background-color: #ED4771;
-    box-shadow: 4px -4px 0 rgba(237, 71, 113, 0.5);
+    box-shadow: 4px 4px 0 rgba(237, 71, 113, 0.5);
 }
 
 .task.selected .show-selected {
-	height: 185px;
-    padding-top: 1rem;
+	height: 224px;
+    padding-top: 10px;
 }
 
 .task-wrapper .time {
@@ -130,8 +150,16 @@ footer time {
 	margin-bottom: 1rem;
 }
 
+.task-wrapper .time img {
+    max-height: 30px;
+    opacity: 0.5;
+    margin-bottom: -5px;
+}
+
 .task-wrapper.selected {
     flex: 2;
+    flex-basis: 200px;
+	min-width: 200px;
 }
 
 .task {
@@ -139,8 +167,8 @@ footer time {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 	background-color: #C2AB02;
-	padding: 20px;
-    box-shadow: 4px -4px 0 rgba(194, 171, 2, 0.5);
+	padding: 10px;
+    box-shadow: 4px 4px 0 rgba(194, 171, 2, 0.5);
     margin: 0;
     font-size: 1rem;
     font-weight: normal;
@@ -154,7 +182,12 @@ footer time {
     background-color: #4DBDB7;
     color: #2B6965;
     opacity: 0.25;
-    box-shadow: 4px -4px 0 rgba(65, 158, 153, 0.5);
+    box-shadow: 4px 4px 0 rgba(65, 158, 153, 0.5);
+}
+
+.task.missed {
+    background-color: #ED4771;
+    box-shadow: 4px 4px 0 rgba(237, 71, 113, 0.5);
 }
 
 .task.completed h2 {
@@ -168,27 +201,43 @@ footer time {
     width: 100%;
 }
 
+.task .main-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    padding: 20px;
+    max-width: 140px;
+    margin: auto;
+}
+
 .task img.main-icon {
 	height: 0;
     transition: height 200ms ease;
 }
 
 .task.selected img.main-icon {
+    width: 100px;
     height: 100px;
+    margin: auto;
+    display: inherit;
 }
 
 .task button {
 	width: 100%;
 }
 
-.task .pill {
-    padding: 10px 40px 10px 20px;
+.task-wrapper .pill {
+    display: block;
+    padding: 10px 20px;
     background-color: #fff;
     color: #ED4771;
+    text-decoration: none;
     border-radius: 20px;
-    margin: 1rem auto 0 auto;
-    background-image: url(../img/icon_tick_reversed.svg);
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-position: right 15px center;
+    margin: 18px auto 0 auto;
 }
+
+.task-message {
+    display: block;
+    margin: 18px 0 0 0;
+    text-align: center;
+}
+

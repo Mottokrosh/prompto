@@ -1,51 +1,140 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+function getGreetingTime (m) {
+	var g = null; // return g
+
+	if(!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
+
+	var split_afternoon = 12; // 24hr time to split the afternoon
+	var split_evening = 17; // 24hr time to split the evening
+	var currentHour = parseFloat(m.format('HH'));
+
+	if(currentHour >= split_afternoon && currentHour <= split_evening) {
+		g = 'afternoon';
+	} else if(currentHour >= split_evening) {
+		g = 'evening';
+	} else {
+		g = 'morning';
+	}
+
+	return g;
+}
+
+var app = angular.module('Prompto', ['ngResource', 'ngRoute', 'ngSanitize', 'ngTouch']);
+
+app.config(function ($routeProvider) {
+	$routeProvider
+		.when('/', {
+			templateUrl: 'views/main.html',
+			controller: "MainCtrl"
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+});
+
+app.controller('HeaderCtrl', function ($scope) {
+	var greeting = 'Good ' + getGreetingTime(moment()) + ', Harriet';
+	$scope.message = greeting;
+});
+
+app.controller('MainCtrl', function ($scope, $http, $interval) {
+	function setStates() {
+		var found = false;
+		angular.forEach($scope.tasks, function (task) {
+			task.value.selected = false;
+			if (!found && task.value.completed === false && moment(task.value.time, 'HH:mm') > moment()) {
+				task.value.next = true;
+				task.value.selected = true;
+				found = true;
+			}
+			if (task.value.completed === false && moment(task.value.time, 'HH:mm') < moment()){
+				task.value.missed = true;
+			}
+		});
+	}
+
+	$scope.setStates = setStates;
+
+	$http.get('https://prompto.smileupps.com/tasks/_design/tasks/_view/all')
+		.success(function (response) {
+			$scope.tasks = response.rows;
+			setStates();
+		});
+
+	$interval(setStates, 10000);
+
+	$scope.taskClick = function ($event, task) {
+		angular.forEach($scope.tasks, function (task) {
+			task.value.selected = false;
+		});
+		task.selected = true;
+	};
+});
+
+app.directive('taskIcon', function () {
+	return {
+		restrict: 'A',
+		scope: {
+			task: '=taskIcon'
+		},
+		link: function (scope, elem) {
+			var icon,
+				icons = {
+					'Charging': 'img/icon_charge.svg',
+					'Hygiene': 'img/icon_pill.svg',
+					'Nutrition': 'img/icon_nutrition.svg',
+					'Medication': 'img/icon_pill.svg',
+					'Visit': 'img/photos/Ramone.png'
+				},
+				defaultIcon = 'img/icon_star.svg';
+
+			if (scope.task.missed) {
+				icon = 'img/icon_cross.svg';
+			} else if (scope.task.completed) {
+				icon = 'img/icon_tick.svg';
+			} else {
+				icon = icons[scope.task.category] || defaultIcon;
+			}
+
+			elem.attr('src', icon);
+		}
+	};
+});
+
+app.directive('buttonOrText', function () {
+	return {
+		restrict: 'E',
+		scope: {
+			task: '=task',
+			setStates: '='
+		},
+		template: '<span ng-show="task.next"><a ng-click="doClick()" role="button" class="pill">Mark as Done</a></span>' +
+			'<span ng-hide="task.next" class="task-message">{{output}}</span>',
+		link: function (scope, elem) {
+			scope.output = 'Later';
+
+			scope.doClick = function () {
+				scope.task.completed = true;
+				scope.setStates();
+			};
+
+			if (scope.task.missed) {
+				scope.output = 'Missed';
+			} else if (scope.task.completed) {
+				scope.output = 'Done';
+			}
+		}
+	};
+});
+
 var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+	initialize: function() {
+		document.addEventListener('deviceready', this.onDeviceReady, false);
+	},
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+	onDeviceReady: function() {
+		console.log('device ready');
 
-        console.log('Received Event: ' + id);
-    }
+	}
 };
 
 app.initialize();
