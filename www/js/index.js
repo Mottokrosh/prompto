@@ -40,12 +40,13 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 	$http.get('https://prompto.smileupps.com/tasks/_design/tasks/_view/all')
 		.success(function (response) {
 			$scope.tasks = response.rows;
+			setStates();
 		});
-
 		
-	$interval(function () {
+	function setStates() {
 		var found = false;
 		angular.forEach($scope.tasks, function (task) {
+			task.value.selected = false;
 			if (!found && task.value.completed === false && moment(task.value.time, 'HH:mm') > moment()) {
 				task.value.next = true;
 				task.value.selected = true;
@@ -55,14 +56,17 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 				task.value.missed = true;
 			}
 		});
-	}, 1000);
+	}
+	
+	
+	$interval(setStates, 10000);
+	
 
 	$scope.taskClick = function ($event, task) {
-		if (task.next || task.completed) {
-			$event.preventDefault();
-		} else {
-			task.selected = !task.selected;
-		}
+		angular.forEach($scope.tasks, function (task) {
+			task.value.selected = false;
+		});
+		task.selected = true;
 	};
 
 	$scope.taskTime = function (task) {
