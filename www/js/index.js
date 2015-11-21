@@ -42,7 +42,7 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 			$scope.tasks = response.rows;
 			setStates();
 		});
-		
+
 	function setStates() {
 		var found = false;
 		angular.forEach($scope.tasks, function (task) {
@@ -57,10 +57,8 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 			}
 		});
 	}
-	
-	
+
 	$interval(setStates, 10000);
-	
 
 	$scope.taskClick = function ($event, task) {
 		angular.forEach($scope.tasks, function (task) {
@@ -69,8 +67,18 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 		task.selected = true;
 	};
 
-	$scope.upcoming = function (task) {
-		return moment(task.time, 'HH:mm') >= moment();
+	$scope.buttonOrText = function (task) {
+		var output = '<span class="task-message">Later</span>';
+
+		if (task.next) {
+			output = '<a href="#" class="pill" role="button">Mark as Done</a>';
+		} else if (task.missed) {
+			output = '<span class="task-message">Missed</span>';
+		} else if (task.completed) {
+			output = '<span class="task-message">Done</span>';
+		}
+
+		return output;
 	};
 });
 

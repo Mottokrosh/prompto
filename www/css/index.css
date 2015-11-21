@@ -122,7 +122,6 @@ footer time {
 	border: medium none;
 	border-spacing: 0;
 	color: #26589F;
-	font-family: 'PT Sans Narrow',sans-serif;
 	font-size: 16px;
 	font-weight: normal;
 	line-height: 1.42rem;
@@ -140,7 +139,7 @@ footer time {
 }
 
 .task.selected .show-selected {
-	height: 215px;
+	height: 224px;
     padding-top: 10px;
 }
 
@@ -206,6 +205,8 @@ footer time {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     padding: 20px;
+    max-width: 140px;
+    margin: auto;
 }
 
 .task img.main-icon {
@@ -216,6 +217,8 @@ footer time {
 .task.selected img.main-icon {
     width: 100px;
     height: 100px;
+    margin: auto;
+    display: inherit;
 }
 
 .task button {
@@ -223,13 +226,18 @@ footer time {
 }
 
 .task-wrapper .pill {
-    padding: 10px 40px 10px 20px;
+    display: block;
+    padding: 10px 20px;
     background-color: #fff;
     color: #ED4771;
+    text-decoration: none;
     border-radius: 20px;
-    margin: 14px auto 0 auto;
-    background-image: url(../img/icon_tick_reversed.svg);
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-position: right 15px center;
+    margin: 18px auto 0 auto;
 }
+
+.task-message {
+    display: block;
+    margin: 18px 0 0 0;
+    text-align: center;
+}
+
