@@ -1,6 +1,6 @@
 <div class="timeline col-wrapper">
 	<div class="task-wrapper" ng-repeat="taskObj in tasks" ng-init="task = taskObj.value" ng-class="{ selected: task.selected }">
-		<div class="time" ng-bind-html="taskTime(task)"></div>
+		<div class="time">{{task.time}}</div>
 			<div ng-class="{ task: true, completed: task.completed, selected: task.selected, missed: task.missed }">
 			<button ng-click="taskClick($event, task)">
 				<h2>{{task.name}}</h2>
@@ -8,7 +8,7 @@
 
 			<div class="show-selected">
 				<div class="main-icon-wrapper">
-					<img task-icon="task.category" class="main-icon">
+					<img task-icon="task" class="main-icon">
 				</div>
 				<div class="pill">Done</div>
 			</div>

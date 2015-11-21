@@ -187,12 +187,8 @@ footer time {
 }
 
 .task.missed {
-	background-color: #323a3c;
-    box-shadow: 4px 4px 0 rgba(50, 58, 60, 0.5);
-}
-
-.task.missed h2 {
-    color: #5D6C70;
+    background-color: #ED4771;
+    box-shadow: 4px 4px 0 rgba(237, 71, 113, 0.5);
 }
 
 .task.completed h2 {

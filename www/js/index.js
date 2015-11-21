@@ -69,14 +69,6 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 		task.selected = true;
 	};
 
-	$scope.taskTime = function (task) {
-		if (task.missed) {
-			return '<img src="img/icon_cross.svg">';
-		} else {
-			return task.completed ? '<img src="img/icon_tick.svg">' : task.time;
-		}
-	};
-
 	$scope.upcoming = function (task) {
 		return moment(task.time, 'HH:mm') >= moment();
 	};
@@ -86,18 +78,28 @@ app.directive('taskIcon', function () {
 	return {
 		restrict: 'A',
 		scope: {
-			category: '=taskIcon'
+			task: '=taskIcon'
 		},
 		link: function (scope, elem) {
-			var icons = {
-				'Charging': 'img/icon_charge.svg',
-				'Hygiene': 'img/icon_pill.svg',
-				'Nutrition': 'img/icon_nutrition.svg',
-				'Medication': 'img/icon_pill.svg',
-				'Visit': 'img/photos/Ramone.png'
-			},
-			defaultIcon = 'img/icon_star.svg';
-			elem.attr('src', icons[scope.category] || defaultIcon);
+			var icon,
+				icons = {
+					'Charging': 'img/icon_charge.svg',
+					'Hygiene': 'img/icon_pill.svg',
+					'Nutrition': 'img/icon_nutrition.svg',
+					'Medication': 'img/icon_pill.svg',
+					'Visit': 'img/photos/Ramone.png'
+				},
+				defaultIcon = 'img/icon_star.svg';
+
+			if (scope.task.missed) {
+				icon = 'img/icon_cross.svg';
+			} else if (scope.task.completed) {
+				icon = 'img/icon_tick.svg';
+			} else {
+				icon = icons[scope.task.category] || defaultIcon;
+			}
+
+			elem.attr('src', icon);
 		}
 	};
 });
