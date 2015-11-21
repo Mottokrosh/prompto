@@ -169,6 +169,10 @@ footer time {
     box-shadow: 4px 4px 0 rgba(65, 158, 153, 0.5);
 }
 
+.task.missed {
+	background-color: red;
+}
+
 .task.completed h2 {
     color: #2B6965;
 }

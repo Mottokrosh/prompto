@@ -42,13 +42,17 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 			$scope.tasks = response.rows;
 		});
 
+		
 	$interval(function () {
 		var found = false;
 		angular.forEach($scope.tasks, function (task) {
-			if (!found && task.value.completed === false) {
+			if (!found && task.value.completed === false && moment(task.value.time, 'HH:mm') > moment()) {
 				task.value.next = true;
 				task.value.selected = true;
 				found = true;
+			}
+			if (task.value.completed === false && moment(task.value.time, 'HH:mm') < moment()){
+				task.value.missed = true;
 			}
 		});
 	}, 1000);
