@@ -117,6 +117,23 @@ footer time {
     transition: height 100ms ease;
 }
 
+.task-wrapper button {
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	border-spacing: 0;
+	color: #26589F;
+	font-family: 'PT Sans Narrow',sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.42rem;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+}
+
 .task.selected {
     background-color: #ED4771;
     box-shadow: 4px 4px 0 rgba(237, 71, 113, 0.5);
@@ -204,7 +221,7 @@ footer time {
 	width: 100%;
 }
 
-.task .pill {
+.task-wrapper .pill {
     padding: 10px 40px 10px 20px;
     background-color: #fff;
     color: #ED4771;
