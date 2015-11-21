@@ -37,12 +37,6 @@ app.controller('HeaderCtrl', function ($scope) {
 });
 
 app.controller('MainCtrl', function ($scope, $http, $interval) {
-	$http.get('https://prompto.smileupps.com/tasks/_design/tasks/_view/all')
-		.success(function (response) {
-			$scope.tasks = response.rows;
-			setStates();
-		});
-
 	function setStates() {
 		var found = false;
 		angular.forEach($scope.tasks, function (task) {
@@ -58,6 +52,14 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 		});
 	}
 
+	$scope.setStates = setStates;
+
+	$http.get('https://prompto.smileupps.com/tasks/_design/tasks/_view/all')
+		.success(function (response) {
+			$scope.tasks = response.rows;
+			setStates();
+		});
+
 	$interval(setStates, 10000);
 
 	$scope.taskClick = function ($event, task) {
@@ -65,20 +67,6 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 			task.value.selected = false;
 		});
 		task.selected = true;
-	};
-
-	$scope.buttonOrText = function (task) {
-		var output = '<span class="task-message">Later</span>';
-
-		if (task.next) {
-			output = '<a href="#" class="pill" role="button">Mark as Done</a>';
-		} else if (task.missed) {
-			output = '<span class="task-message">Missed</span>';
-		} else if (task.completed) {
-			output = '<span class="task-message">Done</span>';
-		}
-
-		return output;
 	};
 });
 
@@ -108,6 +96,32 @@ app.directive('taskIcon', function () {
 			}
 
 			elem.attr('src', icon);
+		}
+	};
+});
+
+app.directive('buttonOrText', function () {
+	return {
+		restrict: 'E',
+		scope: {
+			task: '=task',
+			setStates: '='
+		},
+		template: '<span ng-show="task.next"><a ng-click="doClick()" role="button" class="pill">Mark as Done</a></span>' +
+			'<span ng-hide="task.next" class="task-message">{{output}}</span>',
+		link: function (scope, elem) {
+			scope.output = 'Later';
+
+			scope.doClick = function () {
+				scope.task.completed = true;
+				scope.setStates();
+			};
+
+			if (scope.task.missed) {
+				scope.output = 'Missed';
+			} else if (scope.task.completed) {
+				scope.output = 'Done';
+			}
 		}
 	};
 });
