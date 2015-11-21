@@ -1,6 +1,17 @@
-<h1>Tasks.</h1>
-<ul>
-	<li ng-repeat="task in tasks">
-		{{task.name}}
-	</li>
-</ul>
+<div class="timeline col-wrapper">
+	<div class="task-wrapper" ng-repeat="taskObj in tasks" ng-init="task = taskObj.value" ng-class="{ selected: task.selected }">
+		<div class="time">{{task.time}}</div>
+			<div ng-class="{ task: true, completed: task.completed, selected: task.selected, missed: task.missed }">
+			<button ng-click="taskClick($event, task)">
+				<h2>{{task.name}}</h2>
+			</button>
+
+			<div class="show-selected">
+				<div class="main-icon-wrapper">
+					<img task-icon="task" class="main-icon">
+				</div>
+				<div ng-bind-html="buttonOrText(task)"></div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="226px" height="226px" viewBox="0 0 226 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_cross</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard" sketch:type="MSArtboardGroup" transform="translate(-87.000000, -87.000000)" fill="#FFFFFF">
+            <g id="icon_cross" sketch:type="MSLayerGroup" transform="translate(200.132034, 200.132034) rotate(-315.000000) translate(-200.132034, -200.132034) translate(50.132034, 50.132034)">
+                <path d="M130,20 C130,20 130,-1.0363483e-13 150,-8.52651283e-14 C170,-6.68954265e-14 170,20 170,20 L170,280 C170,280 170,300 150,300 C130,300 130,280 130,280 L130,20 Z" id="Rectangle-2" sketch:type="MSShapeGroup"></path>
+                <path d="M130,20 C130,20 130,-1.0363483e-13 150,-8.52651283e-14 C170,-6.68954265e-14 170,20 170,20 L170,280 C170,280 170,300 150,300 C130,300 130,280 130,280 L130,20 Z" id="Rectangle-2-Copy" sketch:type="MSShapeGroup" transform="translate(150.000000, 150.000000) rotate(-90.000000) translate(-150.000000, -150.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
