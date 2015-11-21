@@ -53,11 +53,31 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 		});
 	}, 1000);
 
-	$scope.taskClick = function ($event, task){
-		if(task.next || task.completed){
+	$scope.taskClick = function ($event, task) {
+		if (task.next || task.completed) {
 			$event.preventDefault();
-		}else{
+		} else {
 			task.selected = !task.selected;
+		}
+	};
+});
+
+app.directive('taskIcon', function () {
+	return {
+		restrict: 'A',
+		scope: {
+			category: '=taskIcon'
+		},
+		link: function (scope, elem) {
+			var icons = {
+				'Charging': 'img/icon_charge.svg',
+				'Hygiene': 'img/icon_pill.svg',
+				'Nutrition': 'img/icon_nutrition.svg',
+				'Medication': 'img/icon_pill.svg',
+				'Visit': 'img/photos/Ramone.png'
+			},
+			defaultIcon = 'img/icon_star.svg';
+			elem.attr('src', icons[scope.category] || defaultIcon);
 		}
 	};
 });
