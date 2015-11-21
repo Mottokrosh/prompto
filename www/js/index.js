@@ -68,6 +68,10 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 	$scope.taskTime = function (task) {
 		return task.completed ? '<img src="img/icon_tick.svg">' : task.time;
 	};
+
+	$scope.upcoming = function (task) {
+		return moment(task.time, 'HH:mm') >= moment();
+	};
 });
 
 app.directive('taskIcon', function () {
