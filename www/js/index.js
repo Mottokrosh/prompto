@@ -42,7 +42,6 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 			$scope.tasks = response.rows;
 		});
 
-		
 	$interval(function () {
 		var found = false;
 		angular.forEach($scope.tasks, function (task) {
@@ -66,7 +65,11 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 	};
 
 	$scope.taskTime = function (task) {
-		return task.completed ? '<img src="img/icon_tick.svg">' : task.time;
+		if (task.missed) {
+			return '<img src="img/icon_cross.svg">';
+		} else {
+			return task.completed ? '<img src="img/icon_tick.svg">' : task.time;
+		}
 	};
 
 	$scope.upcoming = function (task) {
