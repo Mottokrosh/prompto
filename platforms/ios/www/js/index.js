@@ -18,7 +18,7 @@ function getGreetingTime (m) {
 	return g;
 }
 
-var app = angular.module('Prompto', ['ngResource', 'ngRoute', 'ngSanitize']);
+var app = angular.module('Prompto', ['ngResource', 'ngRoute', 'ngSanitize', 'ngTouch']);
 
 app.config(function ($routeProvider) {
 	$routeProvider

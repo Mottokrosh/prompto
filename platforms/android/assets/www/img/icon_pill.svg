@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="280px" height="280px" viewBox="0 0 280 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_pill</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard" sketch:type="MSArtboardGroup" transform="translate(-60.000000, -60.000000)" fill="#FFFFFF">
+            <g id="icon_pill" sketch:type="MSLayerGroup" transform="translate(199.747998, 200.450054) rotate(-315.000000) translate(-199.747998, -200.450054) translate(109.747998, 39.950054)">
+                <path d="M30,89.9904384 C30,56.8556353 56.8568066,30 90,30 C123.133022,30 150,56.8665053 150,89.9904384 L150,230.016704 C150,263.151507 123.143193,290.007143 90,290.007143 C56.8669776,290.007143 30,263.140637 30,230.016704 L30,89.9904384 L30,89.9904384 Z M5.68434189e-14,89.9904384 L5.68434189e-14,230.016704 C5.68434189e-14,279.709298 40.2985532,320.007143 90,320.007143 C139.711443,320.007143 180,279.720343 180,230.016704 L180,89.9904384 C180,40.2978448 139.701447,-2.55795385e-13 90,-2.55795385e-13 C40.288557,-2.55795385e-13 5.68434189e-14,40.2867999 5.68434189e-14,89.9904384 L5.68434189e-14,89.9904384 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+                <path d="M63,289.540095 L63,160.003571 L163,160.003571 L163,234.438738 C163,284.706643 107.545455,300.17369 94.8181818,300.17369 C82.0909091,300.17369 63,294.54725 63,289.540095 Z" id="Rectangle-2" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

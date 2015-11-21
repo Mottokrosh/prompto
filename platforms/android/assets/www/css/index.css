@@ -1,115 +1,243 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    background-color: #323a3c;
+    font-size: 18px;
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+    background-image: url(../img/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    padding: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
+h1, h2, h3, h4 {
+    color: #E8D22C;
+    margin: 0 0 1em 0;
 }
 
 h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+    font-size: 2.5em;
+    text-align: center;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+h2 {
+    font-size: 1.25em;
+    font-weight: normal;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+#app {
+	margin-top: auto;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+.col-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+header[role="banner"] .logo {
+    background-color: #323a3c;
+    padding: 20px;
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+
+header[role="banner"] .greeting:before {
+    content: '';
+    height: 4px;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(
+        to right,
+        #E8D22C,
+        #4DBDB7,
+        #ED4771
+    );
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+
+#primary-logo img {
+    max-width: 140px;
+    opacity: 0.75;
+    -webkit-transition: opacity 100ms ease;
+    transition: opacity 200ms ease;
 }
+
+#primary-logo img:hover {
+    opacity: 1;
+}
+
+.greeting h1 {
+    margin: 20px 0 0 0;
+}
+
+footer {
+    background-color: #323a3c;
+}
+
+footer > div {
+    padding: 20px;
+    text-align: center;
+}
+
+footer time {
+    text-align: center;
+    color: #4DBDB7;
+    font-size: 2rem;
+}
+
+.timeline {
+	display: flex;
+	align-items: flex-end;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.task-wrapper {
+	flex: 1;
+    flex-basis: 150px;
+	min-width: 150px;
+    margin: 4px 4px 0 4px;
+}
+
+.task .show-selected {
+	overflow: hidden;
+	height: 0;
+    transition: height 100ms ease;
+}
+
+.task-wrapper button {
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	border-spacing: 0;
+	color: #26589F;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.42rem;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+}
+
+.task.selected {
+    background-color: #ED4771;
+    box-shadow: 4px 4px 0 rgba(237, 71, 113, 0.5);
+}
+
+.task.selected .show-selected {
+	height: 224px;
+    padding-top: 10px;
+}
+
+.task-wrapper .time {
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+	font-size: 24pt;
+	margin-bottom: 1rem;
+}
+
+.task-wrapper .time img {
+    max-height: 30px;
+    opacity: 0.5;
+    margin-bottom: -5px;
+}
+
+.task-wrapper.selected {
+    flex: 2;
+    flex-basis: 200px;
+	min-width: 200px;
+}
+
+.task {
+	border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	background-color: #C2AB02;
+	padding: 10px;
+    box-shadow: 4px 4px 0 rgba(194, 171, 2, 0.5);
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.task.completed {
+    background-color: #4DBDB7;
+    color: #2B6965;
+    opacity: 0.25;
+    box-shadow: 4px 4px 0 rgba(65, 158, 153, 0.5);
+}
+
+.task.missed {
+    background-color: #ED4771;
+    box-shadow: 4px 4px 0 rgba(237, 71, 113, 0.5);
+}
+
+.task.completed h2 {
+    color: #2B6965;
+}
+
+.task h2 {
+	text-align: center;
+    color: #fff;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.task .main-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    padding: 20px;
+    max-width: 140px;
+    margin: auto;
+}
+
+.task img.main-icon {
+	height: 0;
+    transition: height 200ms ease;
+}
+
+.task.selected img.main-icon {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: inherit;
+}
+
+.task button {
+	width: 100%;
+}
+
+.task-wrapper .pill {
+    display: block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #ED4771;
+    text-decoration: none;
+    border-radius: 20px;
+    margin: 18px auto 0 auto;
+}
+
+.task-message {
+    display: block;
+    margin: 18px 0 0 0;
+    text-align: center;
+}
+
