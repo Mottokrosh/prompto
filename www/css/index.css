@@ -101,6 +101,7 @@ footer time {
 	display: flex;
 	align-items: flex-end;
 	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 
 .task-wrapper {
