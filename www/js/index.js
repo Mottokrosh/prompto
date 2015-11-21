@@ -18,7 +18,7 @@ function getGreetingTime (m) {
 	return g;
 }
 
-var app = angular.module('Prompto', ['ngResource', 'ngRoute']);
+var app = angular.module('Prompto', ['ngResource', 'ngRoute', 'ngSanitize']);
 
 app.config(function ($routeProvider) {
 	$routeProvider
@@ -59,6 +59,10 @@ app.controller('MainCtrl', function ($scope, $http, $interval) {
 		} else {
 			task.selected = !task.selected;
 		}
+	};
+
+	$scope.taskTime = function (task) {
+		return task.completed ? '<img src="img/icon_tick.svg">' : task.time;
 	};
 });
 

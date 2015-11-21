@@ -133,6 +133,12 @@ footer time {
 	margin-bottom: 1rem;
 }
 
+.task-wrapper .time img {
+    max-height: 30px;
+    opacity: 0.5;
+    margin-bottom: -5px;
+}
+
 .task-wrapper.selected {
     flex: 2;
     flex-basis: 200px;

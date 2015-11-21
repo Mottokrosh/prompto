@@ -1,6 +1,6 @@
 <div class="timeline col-wrapper">
 	<div class="task-wrapper" ng-repeat="taskObj in tasks" ng-init="task = taskObj.value" ng-class="{ selected: task.selected }">
-		<div class="time">{{task.time}}</div>
+		<div class="time" ng-bind-html="taskTime(task)"></div>
 		<button ng-click="taskClick($event, task)" ng-class="{ task: true, completed: task.completed, selected: task.selected }">
 			<h2>{{task.name}}</h2>
 
