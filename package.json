@@ -5,11 +5,14 @@
   "main": "index.js",
   "dependencies": {
     "bower": "^1.6.5",
-    "gulp": "^3.9.0"
+    "gulp": "^4.0.0",
+    "snyk": "^1.65.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/Mottokrosh/prompto/issues"
   },
-  "homepage": "https://github.com/Mottokrosh/prompto#readme"
+  "homepage": "https://github.com/Mottokrosh/prompto#readme",
+  "snyk": true
 }
