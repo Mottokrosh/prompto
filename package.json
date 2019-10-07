@@ -6,7 +6,7 @@
   "dependencies": {
     "bower": "^1.6.5",
     "gulp": "^4.0.0",
-    "snyk": "^1.65.2"
+    "snyk": "^1.232.0"
   },
   "devDependencies": {},
   "scripts": {
